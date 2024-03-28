@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  vue:
+    build:
+      context: .
+      dockerfile: ./.docker/vue/Dockerfile
+    ports:
+      - "80:80"
+
+  node:
+    build:
+      context: .
+      dockerfile: ./.docker/node/Dockerfile
+    command: node index
+    ports:
+      - "8080:3000"
